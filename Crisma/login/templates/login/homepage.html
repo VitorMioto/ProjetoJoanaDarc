@@ -1,0 +1,81 @@
+{% extends "layout/base.html" %}
+    {% load static %}
+    {% block conteudo %}
+    <div class = "container-fluid">
+        <div class = "container">
+            <center><h2>Paróquia Santa Joana D'arc e Capela Cristo Rei</h2></center>
+            <center><h4>Seja bem vindo ao nosso site!</h4></center>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img class="card-img-top" src="{% static 'img/joana.jpg' %}" alt="Card image cap">
+                        <div class="card-body">
+                            <h6 class ="card-title text-md-left">Horários das missas</h6>
+                            <ul class="list-group">
+                              <li class="list-group-item list-group-flush d-flex justify-content-between align-items-center">
+                                <small>Segundas-Feiras</small>
+                                <span class="badge badge-dark">19h30</span>
+                              </li>
+                              <li class="list-group-item list-group-flush d-flex justify-content-between align-items-center">
+                                <small>Terças-Feiras</small>
+                                <span class="badge badge-dark">08h00</span>
+                              </li>
+                              <li class="list-group-item list-group-flush d-flex justify-content-between align-items-center">
+                                <small>Quintas-Feiras</small>
+                                <span class="badge badge-dark">19h30</span>
+                              </li>
+                              <li class="list-group-item list-group-flush d-flex justify-content-between align-items-center">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <small>Sextas-Feiras</small>
+                                    </div>
+                                    <div class="col-12">
+                                        <ul class="list-group">
+                                        <li class="list-group-item list-group-flush d-flex justify-content-between align-items-center">
+                                            <small>1ª Sexta do mês Matriz</small>
+                                            <small><span class="badge badge-dark">15h00</span></small>
+                                        </li>
+                                        <li class="list-group-item list-group-flush d-flex justify-content-between align-items-center">
+                                            <small>1ª Sexta do mês Capela</small>
+                                            <small><span class="badge badge-dark">09h00</span></small>
+                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <span class="badge badge-dark">08h00</span>
+                              </li>
+                              <li class="list-group-item list-group-flush d-flex justify-content-between align-items-center">
+                                <small>Sábados</small>
+                                <span class="badge badge-dark">16h30</span>
+                              </li>
+                              <li class="list-group-item list-group-flush d-flex justify-content-between align-items-center">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <small>Domingos</small>
+                                    </div>
+                                    <div class="col-12">
+                                        <ul class="list-group">
+                                        <li class="list-group-item list-group-flush d-flex justify-content-between align-items-center">
+                                            <small>Matriz</small>
+                                            <small><span class="badge badge-dark">10h30/19h</span></small>
+                                        </li>
+                                        <li class="list-group-item list-group-flush d-flex justify-content-between align-items-center">
+                                            <small>Capela</small>
+                                            <small><span class="badge badge-dark">08h00</span></small>
+                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                              </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

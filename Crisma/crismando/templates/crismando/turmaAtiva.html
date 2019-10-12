@@ -1,0 +1,25 @@
+{% extends "layout/base.html" %}
+
+    {% block conteudo %}
+    {% if errorMessage %}
+        <p style="color:red;"><strong>{{errorMessage}}</strong></p>
+    {% endif %}
+    <div class ="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            Digite um ano:
+            <div class="col-2">
+                <input type="text" class="form-control" name="ano">
+            </div>
+            Ativo:
+            <div class="col-2">
+                <select name="ativo" class="form-control" id="ativo">
+                    <option value="">Selecione uma opção</option>
+                    <option value="S">Sim</option>
+                    <option value="N">Não</option>
+                </select>
+            </div>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+    {% endblock %}
