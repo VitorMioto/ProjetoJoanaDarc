@@ -1,0 +1,26 @@
+{% extends "layout/base.html" %}
+
+    {% block conteudo %}
+    <div class ="form-group">
+            {% csrf_token %}
+        <div class="container">
+            <table class="table">
+                <tr>
+                    <th scope = "col">Ano</th>
+                    <th scope="col">Ativo</th>
+                </tr>
+            {% for t in turma %}
+                <tr>
+                    <th scope="row">{{t.anoTurma}}</th>
+                    {% if t.ativo == "S" %}
+                        <th scope="row"><input type="radio" name="ativo" value="turma_{{t.id}}" checked></th>
+                    {% else %}
+                        <th scope="row"><input type="radio" name="ativo" value="turma_{{t.id}}"></th>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            </table>
+            <button type="submit">Salvar</button>
+        </div>
+    </div>
+    {% endblock %}

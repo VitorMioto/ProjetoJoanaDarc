@@ -4,5 +4,6 @@ from .views import novoCrismando, novaTurma,listaPresenca
 urlpatterns = [
     path('',novoCrismando, name='crismando'),
     path('novaturma/', novaTurma, name='novaTurma'),
-    path('listapresenca/', listaPresenca, name='listaPresenca')
+    path('listapresenca/', listaPresenca, name='listaPresenca'),
+    #path('listarturma/',listarTurma,name='listarTurma'),
 ]

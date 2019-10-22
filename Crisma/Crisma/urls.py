@@ -15,15 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from login import urls as login_url
 from encontro import urls as encontro_url
 from crismando import urls as crismando_url
-from .views import bemVindo
+from .views import homePage
+from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
     path('encontro/', include(encontro_url), name='urlEncontro'),
     path('crismando/', include(crismando_url), name='urlCrismando'),
-    path('login/', include(login_url)),
+    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('admin/', admin.site.urls),
-    path('',bemVindo,name='bemvindo')
+    path('',homePage,name='homePage')
 ]

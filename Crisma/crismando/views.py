@@ -2,44 +2,55 @@ from django.shortcuts import render, redirect
 from .forms import CrismandoForm
 from .models import Turma, Crismando
 from encontro.models import Encontro, Presenca
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 def novoCrismando(request):
-    form = CrismandoForm(request.POST or None)
-    data = {'form': form}
-    if form.is_valid():
-        form.save()
-        #return redirect(request, 'home.html')
+    turma = Turma.objects.get(ativo="S")
+    data = {'turma': turma}
+    if request.POST:
+        pass
 
-    return render(request,'crismando/crismando.html',data)
+    else:
+        return render(request,'crismando/crismando.html',data)
 
+
+@login_required
 def novaTurma(request):
     turma = Turma.objects.all()
+    data = {'turma':turma}
     if request.POST:
         ano = request.POST['ano']
         ativo = request.POST['ativo']
         if ano=='' or ano== None:
-            return render(request, 'crismando/turmaAtiva.html', {'errorMessage': 'Favor preencher o campo ano corretamente'})
+            data['errorMessage'] = 'Favor preencher o campo ano corretamente'
+            return render(request, 'crismando/criarTurma.html', data)
         elif ativo=='' or ativo== None:
-            return render(request, 'crismando/turmaAtiva.html', {'errorMessage': 'Favor selecionar se está ativo ou não'})
+            data['errorMessage'] = 'Favor selecionar se está ativo ou não'
+            return render(request, 'crismando/criarTurma.html', data)
         else:
             for verfativo in turma:
                 if verfativo.anoTurma == int(ano):
-                    return render(request, 'crismando/turmaAtiva.html',
-                                  {'errorMessage': 'Já existe esse ano cadastrado'})
+                    data['errorMessage'] = 'Já existe esse ano cadastrado'
+                    return render(request, 'crismando/criarTurma.html', data)
+
             if ativo == 'S':
                 for verfativo in turma:
                     if verfativo.ativo == 'S':
-                        return render(request, 'crismando/turmaAtiva.html',
-                                      {'errorMessage':'Já existe uma turma ativa: ' + str(verfativo.anoTurma)})
+                        data['errorMessage'] = 'Já existe uma turma ativa: ' + str(verfativo.anoTurma)
+                        return render(request, 'crismando/criarTurma.html', data)
             b = Turma(anoTurma=ano, ativo=ativo)
             b.save()
-            sucesso = 'Registro salvo com sucesso'
-            return redirect('crismando')
+            turma = Turma.objects.all()
+            data['sucesso'] = 'Registro salvo com sucesso'
+            data['turma'] = turma
+            return render(request,'crismando/criarTurma.html', data)
     else:
-        return render(request,'crismando/turmaAtiva.html')
+        return render(request,'crismando/criarTurma.html', data)
 
+
+@login_required
 def listaPresenca(request):
 
     turma = Turma.objects.get(ativo='S')
@@ -67,3 +78,14 @@ def listaPresenca(request):
         return redirect('crismando')
     else:
         return render(request,'crismando/registroPresenca.html', data)
+
+
+#@login_required
+#def listarTurma(request):
+#    turma = Turma.objects.all()
+#    data = {'turma':turma}
+#    if request.POST:
+#        pass
+#    else:
+#        return render(request,'crismando/listarTurma.html',data)
+

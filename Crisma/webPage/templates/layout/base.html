@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Paróquia Joana D'arc e Capela Cristo Rei{% endblock %}</title>
+    {% block styles %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+          <a class="navbar-brand text-light" href="{% url 'homePage' %}"><img src="{% static 'img/church.png' %}" height="42" width="42"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link text-light" href="{% url 'homePage' %}">Home</a>
+              </li>
+              <li class="dropdown bg-dark">
+                  <a href="" class="dropdown-toggle nav-link text-light" data-toggle="dropdown">
+                  Crisma<span class="caret"></span></a>
+                <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item text-light" href="{% url 'novaTurma' %}">Turmas cadastradas</a></li>
+                    <li><a class="dropdown-item text-light" href="{% url 'crismando' %}">Cadastro Crisma</a></li>
+                    <li><a class="dropdown-item text-light" href="{% url 'listaPresenca' %}">Lista de Presença</a></li>
+                    <li><a class="dropdown-item text-light" href="{% url 'encontro' %}">Encontros</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class ="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link disabled text-light href=">Login</a>
+              </li>
+            </ul>
+          </div>
+
+        </nav>
+    </header>
+
+
+    {% block conteudo %}{% endblock %}
+
+
+    {% block scripts %}{% endblock %}
+    <footer class="footer bottom bg-dark">
+        <div class = "container-fluid">
+            <div class ="row">
+                <div class="col-sm-auto">
+                    <p class="text-sm text-light">Paróquia Santa Joana D'arc<br><small>Rua Gaurama, 192 - São Paulo</small></p>
+                </div>
+                <div class="col-sm-auto">
+                    <p class = "text-sm text-light">Capela Cristo Rei<br><small>Rua Altinopolis, 25</small></p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <div class="col col-sm-auto">
+                   <small>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="https://kit.fontawesome.com/ff32976c41.js" crossorigin="anonymous"></script>
+</body>
+</html>

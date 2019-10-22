@@ -1,0 +1,12 @@
+{% extends "layout/base.html" %}
+
+    {% block conteudo %}
+    <div class="container">
+        <h2>Login</h2>
+        <form action="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    {% endblock %}

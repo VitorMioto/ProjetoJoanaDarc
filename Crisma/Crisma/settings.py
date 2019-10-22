@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'login',
+    'webPage',
     'crismando',
     'encontro',
+    'musicos',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'Crisma.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,3 +126,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     'estaticos',
 ]
+
+LOGIN_URL = '/login/'
+
+LOGIN_REDIRECT_URL = 'homePage'
