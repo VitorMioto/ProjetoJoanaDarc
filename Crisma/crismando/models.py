@@ -24,7 +24,7 @@ class Crismando(models.Model):
     nome = models.CharField(max_length=100)
     dtNascimento = models.DateTimeField()
     endereco = models.CharField(max_length=100)
-    numero = models.CharField(max_length=5)
+    numero = models.IntegerField()
     compl = models.CharField(max_length=15,null=True, blank=True)
     nomeMae = models.CharField(max_length=100)
     nomePai = models.CharField(max_length=100)
@@ -41,3 +41,28 @@ class Crismando(models.Model):
         verbose_name_plural = 'Crismando'
 
 
+    def is_valid(self):
+        if len(str(self.nome))==0:
+            return 'Obrigatório preencher com o nome.',False
+        elif len(str(self.dtNascimento))==0:
+            return 'Obrigatório preencher a data de nascimento.',False
+        elif len(str(self.endereco))==0:
+            return 'Obrigatório preencher o endereço.', False
+        elif len(str(self.numero))==0:
+            return 'Obrigatório preencher o número.', False
+        elif not str(self.numero).isdigit():
+            return 'Apenas números no campo número.', False
+        elif len(str(self.nomeMae))==0:
+            return 'Obrigatório preencher com o nome da Mãe.', False
+        elif len(str(self.nomePai))==0:
+            return 'Obrigatório preencher com o nome do Pai.', False
+        elif len(str(self.telMae))==0:
+            return 'Obrigatório preencher com telefone da Mãe.', False
+        elif len(str(self.telPai))==0:
+            return 'Obrigatório preencher com o telefone do Pai.', False
+        elif len(str(self.fezBatismo))==0:
+            return 'Obrigatório selecionar se foi batizado.', False
+        elif len(str(self.fezComunhao))==0:
+            return 'Obrigatório selecionar se fez primeira comunhão.', False
+        else:
+            return '',True

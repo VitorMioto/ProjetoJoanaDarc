@@ -10,8 +10,18 @@ def novoCrismando(request):
     turma = Turma.objects.get(ativo="S")
     data = {'turma': turma}
     if request.POST:
-        pass
-
+        crismando = Crismando(nome=request.POST['nome'], dtNascimento=request.POST['dtNasc'],
+                              endereco=request.POST['endereco'], numero=request.POST['numero'],
+                              compl=request.POST['compl'], nomeMae=request.POST['nomeMae'],
+                              nomePai=request.POST['nomePai'], telMae=request.POST['telMae'],
+                              telPai=request.POST['telPai'],fezBatismo=request.POST['fezBatismo'],
+                              fezComunhao=request.POST['fezComunhao'], turma=Turma.objects.get(anoTurma=request.POST['turma']))
+        errMessage, valid = crismando.is_valid()
+        if valid:
+            crismando.save()
+        else:
+            data['err']=errMessage
+        return render(request, 'crismando/crismando.html', data)
     else:
         return render(request,'crismando/crismando.html',data)
 
