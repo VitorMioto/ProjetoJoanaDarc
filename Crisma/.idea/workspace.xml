@@ -7,14 +7,8 @@
     <list default="true" id="fb26b3ee-5a70-47e3-b10d-bf8d6adafd15" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crismando/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/crismando/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crismando/templates/crismando/crismando.html" beforeDir="false" afterPath="$PROJECT_DIR$/crismando/templates/crismando/crismando.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crismando/templates/crismando/criarTurma.html" beforeDir="false" afterPath="$PROJECT_DIR$/crismando/templates/crismando/criarTurma.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crismando/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/crismando/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webPage/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/webPage/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webPage/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webPage/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/webPage/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webPage/templates/layout/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/webPage/templates/layout/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webPage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webPage/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,52 +58,52 @@
     <session id="953384385">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.3" value="5" />
+          <entry key="project.open.time.3" value="6" />
           <entry key="project.open.time.4" value="3" />
           <entry key="project.open.time.5" value="4" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="77" />
-          <entry key="html" value="5231" />
-          <entry key="py" value="4235" />
+          <entry key="html" value="5780" />
+          <entry key="py" value="5139" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="77" />
-          <entry key="HTML" value="5231" />
-          <entry key="Python" value="4235" />
+          <entry key="HTML" value="5780" />
+          <entry key="Python" value="5139" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="7" />
-          <entry key="html" value="11" />
-          <entry key="py" value="41" />
+          <entry key="html" value="14" />
+          <entry key="py" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="7" />
-          <entry key="HTML" value="11" />
-          <entry key="Python" value="41" />
+          <entry key="HTML" value="14" />
+          <entry key="Python" value="43" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crismando/templates/crismando/crismando.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="266">
+              <caret line="50" column="49" lean-forward="true" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="49" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#center#0;n#div#0;n#form#0;n#div#1;n#!!top" expanded="true" />
@@ -121,12 +115,39 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crismando/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="58" column="38" lean-forward="true" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
+            <state relative-caret-position="102">
+              <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
               <folding>
-                <marker date="1571972653858" expanded="true" signature="1154:1159" ph="..." />
-                <marker date="1571972653858" expanded="true" signature="1177:1186" ph="..." />
+                <marker date="1572057450164" expanded="true" signature="1170:1175" ph="..." />
+                <marker date="1572057450164" expanded="true" signature="1193:1202" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crismando/templates/crismando/criarTurma.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/crismando/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="317">
+              <caret line="58" column="47" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="58" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webPage/templates/layout/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-119">
+              <caret line="29" column="97" selection-start-line="29" selection-start-column="97" selection-end-line="29" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -179,19 +200,19 @@
         <option value="$PROJECT_DIR$/crismando/templates/crismando/registroPresenca.html" />
         <option value="$PROJECT_DIR$/Crisma/settings.py" />
         <option value="$PROJECT_DIR$/estaticos/css/style.css" />
-        <option value="$PROJECT_DIR$/crismando/templates/crismando/criarTurma.html" />
         <option value="$PROJECT_DIR$/webPage/templates/login/homepage.html" />
         <option value="$PROJECT_DIR$/webPage/templates/layout/base.html" />
-        <option value="$PROJECT_DIR$/crismando/views.py" />
         <option value="$PROJECT_DIR$/webPage/models.py" />
         <option value="$PROJECT_DIR$/webPage/views.py" />
         <option value="$PROJECT_DIR$/webPage/admin.py" />
-        <option value="$PROJECT_DIR$/crismando/models.py" />
         <option value="$PROJECT_DIR$/crismando/templates/crismando/crismando.html" />
+        <option value="$PROJECT_DIR$/crismando/templates/crismando/criarTurma.html" />
+        <option value="$PROJECT_DIR$/crismando/models.py" />
+        <option value="$PROJECT_DIR$/crismando/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -219,15 +240,20 @@
             <path>
               <item name="Crisma" type="b2602c69:ProjectViewProjectNode" />
               <item name="Crisma" type="462c0819:PsiDirectoryNode" />
-              <item name="crismando" type="462c0819:PsiDirectoryNode" />
+              <item name="webPage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Crisma" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Crisma" type="462c0819:PsiDirectoryNode" />
+              <item name="webPage" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Crisma" type="b2602c69:ProjectViewProjectNode" />
               <item name="Crisma" type="462c0819:PsiDirectoryNode" />
-              <item name="crismando" type="462c0819:PsiDirectoryNode" />
+              <item name="webPage" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="crismando" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -318,7 +344,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13382508" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -535,24 +562,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webPage/templates/layout/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="97" selection-start-line="29" selection-start-column="97" selection-end-line="29" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crismando/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crismando/templates/crismando/criarTurma.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -574,13 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" selection-start-line="5" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crismando/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" column="44" lean-forward="true" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -626,25 +632,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crismando/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="58" column="38" lean-forward="true" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
-          <folding>
-            <marker date="1571972653858" expanded="true" signature="1154:1159" ph="..." />
-            <marker date="1571972653858" expanded="true" signature="1177:1186" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crismando/templates/crismando/crismando.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="266">
+          <caret line="50" column="49" lean-forward="true" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="49" />
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#center#0;n#div#0;n#form#0;n#div#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webPage/templates/layout/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="29" column="97" selection-start-line="29" selection-start-column="97" selection-end-line="29" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crismando/templates/crismando/criarTurma.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crismando/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <folding>
+            <marker date="1572057450164" expanded="true" signature="1170:1175" ph="..." />
+            <marker date="1572057450164" expanded="true" signature="1193:1202" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crismando/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="58" column="47" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="58" selection-end-column="47" />
         </state>
       </provider>
     </entry>

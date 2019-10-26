@@ -33,23 +33,51 @@ def novaTurma(request):
     if request.POST:
         ano = request.POST['ano']
         ativo = request.POST['ativo']
+        #tgAtiva = request.POST['tgAtiva']
+
         if ano=='' or ano== None:
             data['errorMessage'] = 'Favor preencher o campo ano corretamente'
             return render(request, 'crismando/criarTurma.html', data)
         elif ativo=='' or ativo== None:
             data['errorMessage'] = 'Favor selecionar se está ativo ou não'
             return render(request, 'crismando/criarTurma.html', data)
+        #elif tgAtiva not in ['S', 'N']:
+        #    data['errorMessage'] = 'Não foi identificado tag válida para caixa de seleção.'
+        #    return render(request, 'crismando/criarTurma.html', data)
         else:
-            for verfativo in turma:
-                if verfativo.anoTurma == int(ano):
-                    data['errorMessage'] = 'Já existe esse ano cadastrado'
+            for t in turma:
+                if t.anoTurma == int(ano) and t.ativo=='N' and ativo=='S':
+                    b = Turma(anoTurma=int(ano),ativo='S')
+                    b.save()
+                    turma = Turma.objects.all()
+                    data['sucesso'] = 'Registro atualizado com sucesso'
+                    data['turma'] = turma
+                    return render(request, 'crismando/criarTurma.html', data)
+                elif t.anoTurma == int(ano) and t.ativo=='S' and ativo=='N':
+                    b = Turma(anoTurma=int(ano), ativo='N')
+                    b.save()
+                    turma = Turma.objects.all()
+                    data['sucesso'] = 'Registro atualizado com sucesso'
+                    data['turma'] = turma
                     return render(request, 'crismando/criarTurma.html', data)
 
-            if ativo == 'S':
-                for verfativo in turma:
-                    if verfativo.ativo == 'S':
-                        data['errorMessage'] = 'Já existe uma turma ativa: ' + str(verfativo.anoTurma)
+
+
+
+            for verfAtivo in turma:
+                if verfAtivo.anoTurma == int(ano):
+                    if ativo=='N':
+                        data['errorMessage'] = 'Ano cadastrado anteriormente'
                         return render(request, 'crismando/criarTurma.html', data)
+                    else:
+                        b = Turma(anoTurma=ano, ativo='S')
+                        b.save()
+                if ativo == 'S':
+                    for verfAtivo in turma:
+                        if verfAtivo.ativo == 'S':
+                            data['errorMessage'] = 'Já existe uma turma ativa: ' + str(verfAtivo.anoTurma)
+                            return render(request, 'crismando/criarTurma.html', data)
+
             b = Turma(anoTurma=ano, ativo=ativo)
             b.save()
             turma = Turma.objects.all()
