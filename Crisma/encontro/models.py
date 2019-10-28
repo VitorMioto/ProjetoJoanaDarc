@@ -1,11 +1,12 @@
 from django.db import models
-from crismando.models import Turma, Crismando
+from crismando.models import Crismando, Turma
 # Create your models here.
 
 class Encontro(models.Model):
-    dtEncontro = models.DateTimeField()
+    dtEncontro = models.DateField()
     nome = models.CharField(max_length=100)
-    turma =  models.ForeignKey(Turma, on_delete=models.CASCADE)
+    registroPresenca = models.CharField(max_length=1)
+    #turma =  models.ForeignKey(Turma, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome
@@ -13,7 +14,6 @@ class Encontro(models.Model):
         verbose_name_plural = 'Encontro'
 
 class Presenca(models.Model):
-    #turma = models.ForeignKey(Turma, on_delete=models.CASCADE)
     encontro = models.ForeignKey(Encontro, on_delete=models.CASCADE)
     crismando = models.ForeignKey(Crismando, on_delete=models.CASCADE)
 

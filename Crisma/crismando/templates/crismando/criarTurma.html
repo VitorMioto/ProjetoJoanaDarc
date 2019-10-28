@@ -10,17 +10,14 @@
     <div class="container border shadow rounded mb-4 mt-4" style="width:20%;">
         <div class="container"><p class="h3 text-center text-dark mt-2">Nova turma</p></div>
         <div class ="form-group">
-            <form method="POST">
+            <form action="{% url 'novaTurma' %}" method="POST">
                 {% csrf_token %}
-                <input type="text" class="form-control mb-4 mt-4 shadow-sm rounded" name="ano" placeholder="Digite o ano">
+                <input type="text" class="form-control mb-4 mt-4 shadow-sm rounded" name="ano" placeholder="Digite o ano" required>
                 <select name="ativo" class="form-control mb-4 shadow-sm rounded" id="ativo" required>
                     <option disabled selected>Ativo</option>
                     <option value="S">Sim</option>
                     <option value="N">Não</option>
                 </select>
-                <input type="checkbox" class="mb-4 mt-1" name="ativar" id="ativarTurma" onchange="ativarturma()">
-                <label for="ativarTurma">Tornar esta turma ativa?</label>
-                <input type="hidden" name="tgAtiva" id="tgAtiva" value="N">
                 <center><button class="btn btn-dark mb-2 shadow-sm rounded" type="submit">Salvar</button></center>
             </form>
         </div>
@@ -45,21 +42,5 @@
             {% endfor %}
             </table>
         </div>
-        <!--<button type="submit">Salvar</button>-->
     </div>
-    {% endblock %}
-
-
-    {% block scripts %}
-        <script>
-        function ativarturma(){
-            if (document.getElementById("ativarTurma").checked)
-                {
-                    document.getElementById("tgAtiva").value="S"
-                }
-            else {
-                document.getElementById("tgAtiva").value="N"
-            }
-        }
-        </script>
     {% endblock %}

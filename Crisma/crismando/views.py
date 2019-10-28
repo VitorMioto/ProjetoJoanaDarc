@@ -26,61 +26,37 @@ def novoCrismando(request):
         return render(request,'crismando/crismando.html',data)
 
 
-@login_required
+#@login_required
 def novaTurma(request):
-    turma = Turma.objects.all()
+    turma = Turma.objects.all().order_by('-anoTurma')
     data = {'turma':turma}
     if request.POST:
-        ano = request.POST['ano']
-        ativo = request.POST['ativo']
-        #tgAtiva = request.POST['tgAtiva']
 
-        if ano=='' or ano== None:
+        if request.POST['ano']=='' or request.POST['ano']== None:
             data['errorMessage'] = 'Favor preencher o campo ano corretamente'
             return render(request, 'crismando/criarTurma.html', data)
-        elif ativo=='' or ativo== None:
+        elif 'ativo' not in request.POST:
+            data['errorMessage'] = 'Favor selecionar se está ativo ou não'
+            return render(request, 'crismando/criarTurma.html', data)
+        elif request.POST['ativo']=='' or request.POST['ativo']== None:
             data['errorMessage'] = 'Favor selecionar se está ativo ou não'
             return render(request, 'crismando/criarTurma.html', data)
         #elif tgAtiva not in ['S', 'N']:
         #    data['errorMessage'] = 'Não foi identificado tag válida para caixa de seleção.'
         #    return render(request, 'crismando/criarTurma.html', data)
         else:
-            for t in turma:
-                if t.anoTurma == int(ano) and t.ativo=='N' and ativo=='S':
-                    b = Turma(anoTurma=int(ano),ativo='S')
-                    b.save()
-                    turma = Turma.objects.all()
-                    data['sucesso'] = 'Registro atualizado com sucesso'
-                    data['turma'] = turma
-                    return render(request, 'crismando/criarTurma.html', data)
-                elif t.anoTurma == int(ano) and t.ativo=='S' and ativo=='N':
-                    b = Turma(anoTurma=int(ano), ativo='N')
-                    b.save()
-                    turma = Turma.objects.all()
-                    data['sucesso'] = 'Registro atualizado com sucesso'
-                    data['turma'] = turma
-                    return render(request, 'crismando/criarTurma.html', data)
+            ano = request.POST['ano']
+            ativo=request.POST['ativo']
 
-
-
-
-            for verfAtivo in turma:
-                if verfAtivo.anoTurma == int(ano):
-                    if ativo=='N':
-                        data['errorMessage'] = 'Ano cadastrado anteriormente'
-                        return render(request, 'crismando/criarTurma.html', data)
-                    else:
-                        b = Turma(anoTurma=ano, ativo='S')
+            if ativo == 'S':
+                for t in turma:
+                    if t.ativo=='S' and t.anoTurma !=ano:
+                        b = Turma.objects.get(anoTurma=t.anoTurma)
+                        b.ativo = 'N'
                         b.save()
-                if ativo == 'S':
-                    for verfAtivo in turma:
-                        if verfAtivo.ativo == 'S':
-                            data['errorMessage'] = 'Já existe uma turma ativa: ' + str(verfAtivo.anoTurma)
-                            return render(request, 'crismando/criarTurma.html', data)
-
             b = Turma(anoTurma=ano, ativo=ativo)
             b.save()
-            turma = Turma.objects.all()
+            turma = Turma.objects.all().order_by('-anoTurma')
             data['sucesso'] = 'Registro salvo com sucesso'
             data['turma'] = turma
             return render(request,'crismando/criarTurma.html', data)
@@ -88,11 +64,15 @@ def novaTurma(request):
         return render(request,'crismando/criarTurma.html', data)
 
 
-@login_required
+#@login_required
+#antes de jogar para a lista de presença será necessário selecionar qual o dia do encontro, cada encontro deverá possuir uma lista de presença
+#deve haver uma rota antes da lista de presença onde a pessoa irá selecionar de uma lista a data do encontro que irá preencher a lista de presença
+#necessário criar outra rota para criar encontros, onde seja possível no futuro incluir uma lista de encontros (excel/json) ou uma opção de no próprio site montar uma lista e enviar por post no formato json?
 def listaPresenca(request):
 
     turma = Turma.objects.get(ativo='S')
     crismando = Crismando.objects.filter(turma__anoTurma=turma.anoTurma)
+
     data = {'crismando': crismando}
     if request.POST:
         dtEncontro = request.POST['dtEncontro']
