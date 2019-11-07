@@ -1,9 +1,8 @@
 from django.urls import path
-from .views import novoCrismando, novaTurma,listaPresenca
+from .views import novoCrismando, novaTurma
 
 urlpatterns = [
     path('',novoCrismando, name='crismando'),
     path('novaturma/', novaTurma, name='novaTurma'),
-    path('listapresenca/', listaPresenca, name='listaPresenca'),
     #path('listarturma/',listarTurma,name='listarTurma'),
 ]

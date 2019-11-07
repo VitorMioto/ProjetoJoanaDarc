@@ -68,34 +68,8 @@ def novaTurma(request):
 #antes de jogar para a lista de presença será necessário selecionar qual o dia do encontro, cada encontro deverá possuir uma lista de presença
 #deve haver uma rota antes da lista de presença onde a pessoa irá selecionar de uma lista a data do encontro que irá preencher a lista de presença
 #necessário criar outra rota para criar encontros, onde seja possível no futuro incluir uma lista de encontros (excel/json) ou uma opção de no próprio site montar uma lista e enviar por post no formato json?
-def listaPresenca(request):
 
-    turma = Turma.objects.get(ativo='S')
-    crismando = Crismando.objects.filter(turma__anoTurma=turma.anoTurma)
-
-    data = {'crismando': crismando}
-    if request.POST:
-        dtEncontro = request.POST['dtEncontro']
-        print(dtEncontro)
-        nomeEncontro = request.POST['temaEncontro']
-
-        if len(Encontro.objects.filter(dtEncontro=dtEncontro))==0:
-            encontro = Encontro(dtEncontro = dtEncontro, nome = nomeEncontro, turma= turma)
-            encontro.save()
-        else:
-            data['erroDt'] = 'Já foi registrado um encontro nesta data'
-            return render(request, 'crismando/registroPresenca.html', data)
-            #Erro: Já existe essa data de encontro
-
-        for cris_id in crismando:
-            pres = request.POST['hide'+str(cris_id.id)]
-            if pres == "presente":
-                print("estou presente")
-                presenca = Presenca(encontro=encontro,crismando=Crismando.objects.get(pk=cris_id.id))
-                presenca.save()
-        return redirect('crismando')
-    else:
-        return render(request,'crismando/registroPresenca.html', data)
+#Criar app para encotrinho: funções, lista de confirmados...
 
 
 #@login_required
